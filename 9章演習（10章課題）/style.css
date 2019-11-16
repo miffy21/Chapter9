@@ -1,13 +1,17 @@
+/*・topにかける50px指定されていない
+→clearfixがかかっていないため。clearfixをかけると下が100pxの隙間が開くので、clearfixのみの変更で完成しない。*/
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
-.crearfix::after {
+.clearfix::after {
 	content: "";
 	display: block;
 	clear: both;
 }
+
 main {
 	width: 960px;
 	margin: 50px auto;
@@ -58,15 +62,10 @@ main {
 	}
 	.step-box {
 		width: 100%;
-	}
-	.step-box:farst-child {
-		margin-top: 50px;
+		margin-right: 0;
 	}
 	.step-box:nth-child(even) {
 	margin-top: 20px;
 	margin-bottom: 20px;
-    }
-    .step-box:last-child {
-    	margin-bottom: 50px;
     }
 }
